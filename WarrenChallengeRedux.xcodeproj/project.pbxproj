@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		750B32622921BF0700BF74EF /* WarrenChallengeReduxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */; };
-		750B32642921BF0700BF74EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32632921BF0700BF74EF /* ContentView.swift */; };
 		750B32662921BF0A00BF74EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750B32652921BF0A00BF74EF /* Assets.xcassets */; };
 		750B326A2921BF0A00BF74EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750B32692921BF0A00BF74EF /* Preview Assets.xcassets */; };
 		750B32712921CF1900BF74EF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32702921CF1900BF74EF /* LoginView.swift */; };
 		750B32732921D17C00BF74EF /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32722921D17C00BF74EF /* LandingView.swift */; };
+		750B327529228F8100BF74EF /* VisualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B327429228F8100BF74EF /* VisualConstants.swift */; };
+		750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32772922A67300BF74EF /* WideButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		750B325E2921BF0700BF74EF /* WarrenChallengeRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarrenChallengeRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarrenChallengeReduxApp.swift; sourceTree = "<group>"; };
-		750B32632921BF0700BF74EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		750B32652921BF0A00BF74EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		750B32672921BF0A00BF74EF /* WarrenChallengeRedux.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WarrenChallengeRedux.entitlements; sourceTree = "<group>"; };
 		750B32692921BF0A00BF74EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		750B32702921CF1900BF74EF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		750B32722921D17C00BF74EF /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		750B327429228F8100BF74EF /* VisualConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualConstants.swift; sourceTree = "<group>"; };
+		750B32772922A67300BF74EF /* WideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +58,13 @@
 		750B32602921BF0700BF74EF /* WarrenChallengeRedux */ = {
 			isa = PBXGroup;
 			children = (
+				750B32762922A64200BF74EF /* VisualComponentsAndConstants */,
 				750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */,
-				750B32632921BF0700BF74EF /* ContentView.swift */,
+				750B32702921CF1900BF74EF /* LoginView.swift */,
+				750B32722921D17C00BF74EF /* LandingView.swift */,
 				750B32652921BF0A00BF74EF /* Assets.xcassets */,
 				750B32672921BF0A00BF74EF /* WarrenChallengeRedux.entitlements */,
 				750B32682921BF0A00BF74EF /* Preview Content */,
-				750B32702921CF1900BF74EF /* LoginView.swift */,
-				750B32722921D17C00BF74EF /* LandingView.swift */,
 			);
 			path = WarrenChallengeRedux;
 			sourceTree = "<group>";
@@ -73,6 +75,15 @@
 				750B32692921BF0A00BF74EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		750B32762922A64200BF74EF /* VisualComponentsAndConstants */ = {
+			isa = PBXGroup;
+			children = (
+				750B327429228F8100BF74EF /* VisualConstants.swift */,
+				750B32772922A67300BF74EF /* WideButtonStyle.swift */,
+			);
+			path = VisualComponentsAndConstants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */,
 				750B32712921CF1900BF74EF /* LoginView.swift in Sources */,
-				750B32642921BF0700BF74EF /* ContentView.swift in Sources */,
 				750B32732921D17C00BF74EF /* LandingView.swift in Sources */,
 				750B32622921BF0700BF74EF /* WarrenChallengeReduxApp.swift in Sources */,
+				750B327529228F8100BF74EF /* VisualConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
