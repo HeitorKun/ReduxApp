@@ -13,6 +13,7 @@ struct LoginView: View {
         case usernameField
         case passwordField
     }
+    @EnvironmentObject var store: Store<AppState>
     
     @Environment(\.presentationMode) var presentationMode
     @State private var username: String = ""
@@ -20,7 +21,23 @@ struct LoginView: View {
     @FocusState private var focusedField: Field?
     @State private var isSecured: Bool = true
     
+    struct Props {
+        let loginState: LoginStateCases
+        let onDone: (String, String) -> Void
+    }
+    
+    private func map(state: LoginStateCases) -> Props {
+        
+        Props(loginState: store.state.loginState.loginStateCase,
+              onDone: { email, password in
+            store.dispatch(action: PostLogin(email: email, password: password))
+        })
+    }
+    
     var body: some View {
+        
+        let props = map(state: store.state.loginState.loginStateCase)
+        
         NavigationView {
             VStack {
                 VStack{
@@ -118,8 +135,10 @@ struct LoginView: View {
                 Divider()
                 
                 Button {
-                    
+                    // testar se já não está fazendo o fetch
+                    props.onDone(username,password)
                 } label: {
+                    // se já está fazendo fetch botar o circulo girando aqui
                     Text("Continuar")
                 }
                 .buttonStyle(WideButtonStyle())
@@ -147,7 +166,6 @@ struct LoginView: View {
     }
     
 }
-
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

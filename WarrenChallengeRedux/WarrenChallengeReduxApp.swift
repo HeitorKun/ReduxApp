@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct WarrenChallengeReduxApp: App {
+    
+    let store = Store(reducer: appReducer, state: AppState(), middlewares: [])
+    
     var body: some Scene {
         WindowGroup {
             LandingView()

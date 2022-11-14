@@ -15,6 +15,10 @@
 		750B327529228F8100BF74EF /* VisualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B327429228F8100BF74EF /* VisualConstants.swift */; };
 		750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32772922A67300BF74EF /* WideButtonStyle.swift */; };
 		750B327A2922AEE400BF74EF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32792922AEE400BF74EF /* Store.swift */; };
+		750B327E2922AFEF00BF74EF /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B327D2922AFEF00BF74EF /* AppReducer.swift */; };
+		750B32812922B4C200BF74EF /* LoginRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32802922B4C200BF74EF /* LoginRedux.swift */; };
+		750B32842922BED400BF74EF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32832922BED400BF74EF /* WebService.swift */; };
+		750B32872922BF5500BF74EF /* LoginMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32862922BF5500BF74EF /* LoginMiddleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		750B327429228F8100BF74EF /* VisualConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualConstants.swift; sourceTree = "<group>"; };
 		750B32772922A67300BF74EF /* WideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideButtonStyle.swift; sourceTree = "<group>"; };
 		750B32792922AEE400BF74EF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		750B327D2922AFEF00BF74EF /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		750B32802922B4C200BF74EF /* LoginRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRedux.swift; sourceTree = "<group>"; };
+		750B32832922BED400BF74EF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		750B32862922BF5500BF74EF /* LoginMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMiddleware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +68,14 @@
 		750B32602921BF0700BF74EF /* WarrenChallengeRedux */ = {
 			isa = PBXGroup;
 			children = (
+				750B32822922BEAF00BF74EF /* WebService */,
 				750B32762922A64200BF74EF /* VisualComponentsAndConstants */,
 				750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */,
-				750B32702921CF1900BF74EF /* LoginView.swift */,
+				750B327F2922B4A800BF74EF /* LoginScene */,
 				750B32722921D17C00BF74EF /* LandingView.swift */,
 				750B32652921BF0A00BF74EF /* Assets.xcassets */,
 				750B32672921BF0A00BF74EF /* WarrenChallengeRedux.entitlements */,
-				750B32792922AEE400BF74EF /* Store.swift */,
+				750B327B2922AFBF00BF74EF /* Store */,
 				750B32682921BF0A00BF74EF /* Preview Content */,
 			);
 			path = WarrenChallengeRedux;
@@ -87,6 +96,41 @@
 				750B32772922A67300BF74EF /* WideButtonStyle.swift */,
 			);
 			path = VisualComponentsAndConstants;
+			sourceTree = "<group>";
+		};
+		750B327B2922AFBF00BF74EF /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				750B327C2922AFDB00BF74EF /* Reducers */,
+				750B32792922AEE400BF74EF /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		750B327C2922AFDB00BF74EF /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				750B327D2922AFEF00BF74EF /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		750B327F2922B4A800BF74EF /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				750B32702921CF1900BF74EF /* LoginView.swift */,
+				750B32802922B4C200BF74EF /* LoginRedux.swift */,
+				750B32862922BF5500BF74EF /* LoginMiddleware.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		750B32822922BEAF00BF74EF /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				750B32832922BED400BF74EF /* WebService.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750B32842922BED400BF74EF /* WebService.swift in Sources */,
 				750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */,
 				750B32712921CF1900BF74EF /* LoginView.swift in Sources */,
+				750B32872922BF5500BF74EF /* LoginMiddleware.swift in Sources */,
+				750B327E2922AFEF00BF74EF /* AppReducer.swift in Sources */,
 				750B32732921D17C00BF74EF /* LandingView.swift in Sources */,
+				750B32812922B4C200BF74EF /* LoginRedux.swift in Sources */,
 				750B327A2922AEE400BF74EF /* Store.swift in Sources */,
 				750B32622921BF0700BF74EF /* WarrenChallengeReduxApp.swift in Sources */,
 				750B327529228F8100BF74EF /* VisualConstants.swift in Sources */,

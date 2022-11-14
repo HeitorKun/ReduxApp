@@ -15,6 +15,7 @@ protocol ReduxState { }
 
 struct AppState: ReduxState {
 // todos os sub estados aqui
+    let loginState: LoginState
 }
 
 protocol Action { }
