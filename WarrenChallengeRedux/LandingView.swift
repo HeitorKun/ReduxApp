@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct LandingView: View {
+    
+    @State var selection: Int? = nil
+    
     var body: some View {
-        ZStack {
+        
+        NavigationStack {
             VStack{
                 ZStack {
                     Image("lakeHouse")
@@ -35,15 +39,13 @@ struct LandingView: View {
                             Spacer()
                         }
                     }
-                    .padding([.bottom], 50)
+                    .padding([.bottom], 60)
                     .padding([.leading], 30)
                     
                 }
+                .padding([.top], 0)
                 
-                Spacer()
-                Button {
-                    
-                } label: {
+                NavigationLink(value: "LoginView") {
                     Text("Login")
                         .padding([.bottom,.top])
                         .font(.title3)
@@ -51,19 +53,26 @@ struct LandingView: View {
                         .background(Color("redWarren"))
                         .foregroundColor(.white)
                         .cornerRadius(11)
-                    
+                }
+                .navigationDestination(for: String.self) { view in
+                    if view == "LoginView" {
+                        LoginView()
+                            .navigationBarHidden(true)
+                    }
                 }
                 .padding()
+                .padding(.bottom, 50)
                 
-                
-                Spacer()
             }
             
-        }
-        .edgesIgnoringSafeArea(.top)
+            
+        }.edgesIgnoringSafeArea(.top)
         
     }
+    
 }
+
+
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
