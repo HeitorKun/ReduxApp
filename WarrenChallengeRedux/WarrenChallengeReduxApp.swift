@@ -14,7 +14,7 @@ struct WarrenChallengeReduxApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            LandingView().environmentObject(store)
         }
     }
 }

@@ -21,6 +21,15 @@ struct PostLogin: Action {
 
 struct LoginState: ReduxState {
     let loginStateCase: LoginStateCases
+    
+    init() {
+        if let _ = UserDefaultsHelper().fetchTokenFromMemory() {
+            self.loginStateCase = .loggedIn
+        } else {
+            self.loginStateCase = .notLoggedIn
+        }
+    }
+    
 }
 
 func LoginReducer(_ state: LoginState, _ action: Action) -> LoginState {

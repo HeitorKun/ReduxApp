@@ -19,6 +19,7 @@
 		750B32812922B4C200BF74EF /* LoginRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32802922B4C200BF74EF /* LoginRedux.swift */; };
 		750B32842922BED400BF74EF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32832922BED400BF74EF /* WebService.swift */; };
 		750B32872922BF5500BF74EF /* LoginMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32862922BF5500BF74EF /* LoginMiddleware.swift */; };
+		750B328A2922CD6A00BF74EF /* TokenLocalPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32892922CD6A00BF74EF /* TokenLocalPersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		750B32802922B4C200BF74EF /* LoginRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRedux.swift; sourceTree = "<group>"; };
 		750B32832922BED400BF74EF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		750B32862922BF5500BF74EF /* LoginMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMiddleware.swift; sourceTree = "<group>"; };
+		750B32892922CD6A00BF74EF /* TokenLocalPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenLocalPersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +70,11 @@
 		750B32602921BF0700BF74EF /* WarrenChallengeRedux */ = {
 			isa = PBXGroup;
 			children = (
+				750B32882922CD4300BF74EF /* Helpers */,
 				750B32822922BEAF00BF74EF /* WebService */,
 				750B32762922A64200BF74EF /* VisualComponentsAndConstants */,
-				750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */,
 				750B327F2922B4A800BF74EF /* LoginScene */,
+				750B32612921BF0700BF74EF /* WarrenChallengeReduxApp.swift */,
 				750B32722921D17C00BF74EF /* LandingView.swift */,
 				750B32652921BF0A00BF74EF /* Assets.xcassets */,
 				750B32672921BF0A00BF74EF /* WarrenChallengeRedux.entitlements */,
@@ -131,6 +134,14 @@
 				750B32832922BED400BF74EF /* WebService.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		750B32882922CD4300BF74EF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				750B32892922CD6A00BF74EF /* TokenLocalPersistence.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 				750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */,
 				750B32712921CF1900BF74EF /* LoginView.swift in Sources */,
 				750B32872922BF5500BF74EF /* LoginMiddleware.swift in Sources */,
+				750B328A2922CD6A00BF74EF /* TokenLocalPersistence.swift in Sources */,
 				750B327E2922AFEF00BF74EF /* AppReducer.swift in Sources */,
 				750B32732921D17C00BF74EF /* LandingView.swift in Sources */,
 				750B32812922B4C200BF74EF /* LoginRedux.swift in Sources */,

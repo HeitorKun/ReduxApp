@@ -10,6 +10,8 @@ import SwiftUI
 struct LandingView: View {
     @State private var showingSheet = false
     
+    @EnvironmentObject var store: Store<AppState>
+    
     var body: some View {
         ZStack {
             VStack{
@@ -51,7 +53,9 @@ struct LandingView: View {
                 }
                 .padding()
                 .buttonStyle(WideButtonStyle())
-                .fullScreenCover(isPresented: $showingSheet, content: LoginView.init)
+                .fullScreenCover(isPresented: $showingSheet, content: {
+                    LoginView().environmentObject(store)
+                })
                 
                 Spacer()
             }
