@@ -21,6 +21,8 @@ struct LoginView: View {
     @FocusState private var focusedField: Field?
     @State private var isSecured: Bool = true
     
+    @State var isAlertPresented: Bool = false
+    
     struct Props {
         let loginState: LoginStateCases
         let onDone: (String, String) -> Void
@@ -28,10 +30,12 @@ struct LoginView: View {
     
     private func map(state: LoginStateCases) -> Props {
         
-        Props(loginState: store.state.loginState.loginStateCase,
-              onDone: { email, password in
+        let props = Props(loginState: store.state.loginState.loginStateCase,
+                          onDone: { email, password in
             store.dispatch(action: PostLogin(email: email, password: password))
         })
+        return props
+        
     }
     
     var body: some View {
@@ -40,6 +44,7 @@ struct LoginView: View {
         
         NavigationView {
             VStack {
+                Spacer()
                 VStack{
                     HStack{
                         Image(systemName: "envelope")
@@ -131,16 +136,23 @@ struct LoginView: View {
                         .stroke(Color(VisualConstants.black), lineWidth: 1)
                 })
                 .padding([.trailing,.leading])
-                
+                Spacer()
                 Divider()
                 
                 Button {
-                    // testar se já não está fazendo o fetch
-                    props.onDone(username,password)
+                    if password.count >= 6 && username.count >= 6 {
+                        props.onDone(username,password)
+                    }
                 } label: {
                     // se já está fazendo fetch botar o circulo girando aqui
                     Text("Continuar")
                 }
+                .alert(
+                    isPresented: $isAlertPresented ,
+                    content: {
+                        Alert(title: Text("Ops!"), message: Text("Login e/ou senha inválidos"), dismissButton: .default(Text("Fechar")))
+                    }
+                )
                 .buttonStyle(WideButtonStyle())
                 .padding()
                 
@@ -161,7 +173,10 @@ struct LoginView: View {
             .tint(Color(VisualConstants.black))
             .navigationBarTitleDisplayMode(.inline)
             
+        }.onReceive(store.$state) { _ in
+            self.isAlertPresented = store.state.loginState.loginStateCase == .loginFail
         }
+        
         
     }
     

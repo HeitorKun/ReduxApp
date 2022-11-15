@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SaveTokenAfterLogin {
+protocol SaveTokenInPersistence {
     
     func saveToken(token: String)
     
@@ -19,7 +19,7 @@ protocol FetchTokenFromMemory {
     
 }
 
-struct UserDefaultsHelper: SaveTokenAfterLogin, FetchTokenFromMemory {
+struct UserDefaultsHelper: SaveTokenInPersistence, FetchTokenFromMemory {
     
     func saveToken(token: String) {
         let defaults = UserDefaults.standard

@@ -19,9 +19,18 @@ struct PostLogin: Action {
     let password: String
 }
 
-struct LoginState: ReduxState {
-    let loginStateCase: LoginStateCases
+struct LoginFail: Action {
     
+}
+
+struct LoginSuccess: Action {
+    let token: String
+}
+
+struct LoginState: ReduxState {
+    
+    var loginStateCase: LoginStateCases
+
     init() {
         if let _ = UserDefaultsHelper().fetchTokenFromMemory() {
             self.loginStateCase = .loggedIn
@@ -36,8 +45,13 @@ func LoginReducer(_ state: LoginState, _ action: Action) -> LoginState {
     var state = state
     
     switch action {
-        //case let action as LoginPossibilities:
-            //authenticate and get
+    case _ as LoginFail:
+        state.loginStateCase = .loginFail
+        
+    case let action as LoginSuccess:
+        state.loginStateCase = .loggedIn
+        let tokenPersistence: SaveTokenInPersistence = UserDefaultsHelper()
+        tokenPersistence.saveToken(token: action.token)
         default:
             break
     }
