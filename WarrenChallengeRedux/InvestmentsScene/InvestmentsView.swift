@@ -115,7 +115,7 @@ struct InvestmentsView: View {
                         HStack {
                             ScrollView(.horizontal, showsIndicators: false, content: {
                                 HStack {
-                                    ForEach(props.investments, id: \.self) { investment in
+                                    ForEach(props.investments.reversed(), id: \.self) { investment in
                                         InvestmentView(investment: investment)
                                             .padding()
                                     }

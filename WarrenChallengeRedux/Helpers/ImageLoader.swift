@@ -16,7 +16,6 @@ class WebImageLoader: ObservableObject {
     
     init(dataService: ImageDataFetcherService = ImageFetcherWebService()) {
         self.dataService = dataService
-        self.fetch(urlString: "https://images.unsplash.com/photo-1463109598173-3864231fade5?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjg3NTU5fQ")
     }
     
     func fetch(urlString: String) {
