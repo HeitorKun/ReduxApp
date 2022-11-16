@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    let store = Store(reducer: appReducer, state: AppState(), middlewares: [loginMiddleware()])
+    let store = Store(reducer: appReducer, state: AppState(), middlewares: [loginMiddleware(), investmentsMiddleware()])
     @State private var loggedIn: Bool = false
     var body: some View {
         HStack{
             if loggedIn {
-              InvestmentsView()
+                InvestmentsView()
             }
             else {
                 LandingView()

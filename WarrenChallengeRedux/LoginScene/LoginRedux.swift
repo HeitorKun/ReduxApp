@@ -30,7 +30,7 @@ struct LoginSuccess: Action {
 struct LoginState: ReduxState {
     
     var loginStateCase: LoginStateCases
-
+    
     init() {
         if let _ = UserDefaultsHelper().fetchTokenFromMemory() {
             self.loginStateCase = .loggedIn
@@ -52,8 +52,8 @@ func LoginReducer(_ state: LoginState, _ action: Action) -> LoginState {
         state.loginStateCase = .loggedIn
         let tokenPersistence: SaveTokenInPersistence = UserDefaultsHelper()
         tokenPersistence.saveToken(token: action.token)
-        default:
-            break
+    default:
+        break
     }
     
     return state

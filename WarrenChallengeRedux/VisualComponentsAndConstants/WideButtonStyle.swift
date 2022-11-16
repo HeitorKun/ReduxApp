@@ -21,7 +21,6 @@ struct WideButtonStyle: ButtonStyle {
             .cornerRadius(VisualConstants.cornerRadius)
             .opacity(configuration.isPressed ? 0.7 : 1)
             .scaleEffect(configuration.isPressed ? 0.9 : 1)
-            
-            
+        
     }
 }

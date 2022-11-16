@@ -1,5 +1,4 @@
 //
-//  WebService.swift
 //  WarrenChallengeRedux
 //
 //  Created by Heitor Feijó Kunrath on 14/11/22.
@@ -7,23 +6,13 @@
 
 import Foundation
 
-struct LoginTokens: Decodable {
-    let accessToken: String
-    let refreshToken: String
+protocol PostLoginProtocol {
+    
+    func postLogin(email: String, password: String) async -> LoginAnswer
+    
 }
 
-enum LoginAnswer {
-    case error(errorType: NetworkError)
-    case success(tokens: LoginTokens)
-}
-
-enum NetworkError: Error {
-    case badURL
-    case decodingError
-    case noData
-}
-
-class Webservice {
+struct LoginWebservice: PostLoginProtocol {
     
     func postLogin(email: String, password: String) async -> LoginAnswer {
         guard let url = URL(string: "https://enigmatic-bayou-48219.herokuapp.com/api/v2/account/login" ) else {
