@@ -28,10 +28,27 @@
 		7590E1C42924B5E400CDAAFC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1C32924B5E400CDAAFC /* ImageLoader.swift */; };
 		7590E1C62924B62700CDAAFC /* ImageDataFetcherWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1C52924B62700CDAAFC /* ImageDataFetcherWebService.swift */; };
 		7590E1CF2924CD4E00CDAAFC /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1CE2924CD4E00CDAAFC /* InvestmentView.swift */; };
+		7590E1D72925026E00CDAAFC /* LoginRuducerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1D62925026E00CDAAFC /* LoginRuducerTest.swift */; };
+		7590E1DD292502DB00CDAAFC /* LoginRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32802922B4C200BF74EF /* LoginRedux.swift */; };
+		7590E1DE292504D500CDAAFC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32792922AEE400BF74EF /* Store.swift */; };
+		7590E1DF292504F500CDAAFC /* InvestmentsRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09B29248F090020F865 /* InvestmentsRedux.swift */; };
+		7590E1E0292504FA00CDAAFC /* TokenLocalPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750B32892922CD6A00BF74EF /* TokenLocalPersistence.swift */; };
+		7590E1E12925050900CDAAFC /* PortfoliosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09729245C7B0020F865 /* PortfoliosModel.swift */; };
+		7590E1E22925051D00CDAAFC /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FE53292440FC00BC56D2 /* NetworkErrors.swift */; };
 		75FDC09829245C7B0020F865 /* PortfoliosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09729245C7B0020F865 /* PortfoliosModel.swift */; };
 		75FDC09A29248EDC0020F865 /* InvestmentsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09929248EDC0020F865 /* InvestmentsMiddleware.swift */; };
 		75FDC09C29248F090020F865 /* InvestmentsRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09B29248F090020F865 /* InvestmentsRedux.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7590E1D82925026E00CDAAFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750B32562921BF0700BF74EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750B325D2921BF0700BF74EF;
+			remoteInfo = WarrenChallengeRedux;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		750B325E2921BF0700BF74EF /* WarrenChallengeRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarrenChallengeRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +74,8 @@
 		7590E1C32924B5E400CDAAFC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		7590E1C52924B62700CDAAFC /* ImageDataFetcherWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataFetcherWebService.swift; sourceTree = "<group>"; };
 		7590E1CE2924CD4E00CDAAFC /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
+		7590E1D42925026E00CDAAFC /* WarrenChallengeReduxUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarrenChallengeReduxUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7590E1D62925026E00CDAAFC /* LoginRuducerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRuducerTest.swift; sourceTree = "<group>"; };
 		75FDC09729245C7B0020F865 /* PortfoliosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfoliosModel.swift; sourceTree = "<group>"; };
 		75FDC09929248EDC0020F865 /* InvestmentsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsMiddleware.swift; sourceTree = "<group>"; };
 		75FDC09B29248F090020F865 /* InvestmentsRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsRedux.swift; sourceTree = "<group>"; };
@@ -70,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7590E1D12925026E00CDAAFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				750B32602921BF0700BF74EF /* WarrenChallengeRedux */,
+				7590E1D52925026E00CDAAFC /* WarrenChallengeReduxUnitTests */,
 				750B325F2921BF0700BF74EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				750B325E2921BF0700BF74EF /* WarrenChallengeRedux.app */,
+				7590E1D42925026E00CDAAFC /* WarrenChallengeReduxUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +237,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		7590E1D52925026E00CDAAFC /* WarrenChallengeReduxUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7590E1D62925026E00CDAAFC /* LoginRuducerTest.swift */,
+			);
+			path = WarrenChallengeReduxUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +265,24 @@
 			productReference = 750B325E2921BF0700BF74EF /* WarrenChallengeRedux.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7590E1D32925026E00CDAAFC /* WarrenChallengeReduxUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7590E1DC2925026E00CDAAFC /* Build configuration list for PBXNativeTarget "WarrenChallengeReduxUnitTests" */;
+			buildPhases = (
+				7590E1D02925026E00CDAAFC /* Sources */,
+				7590E1D12925026E00CDAAFC /* Frameworks */,
+				7590E1D22925026E00CDAAFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7590E1D92925026E00CDAAFC /* PBXTargetDependency */,
+			);
+			name = WarrenChallengeReduxUnitTests;
+			productName = WarrenChallengeReduxUnitTests;
+			productReference = 7590E1D42925026E00CDAAFC /* WarrenChallengeReduxUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +295,10 @@
 				TargetAttributes = {
 					750B325D2921BF0700BF74EF = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					7590E1D32925026E00CDAAFC = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 750B325D2921BF0700BF74EF;
 					};
 				};
 			};
@@ -258,6 +316,7 @@
 			projectRoot = "";
 			targets = (
 				750B325D2921BF0700BF74EF /* WarrenChallengeRedux */,
+				7590E1D32925026E00CDAAFC /* WarrenChallengeReduxUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +328,13 @@
 			files = (
 				750B326A2921BF0A00BF74EF /* Preview Assets.xcassets in Resources */,
 				750B32662921BF0A00BF74EF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7590E1D22925026E00CDAAFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +370,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7590E1D02925026E00CDAAFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7590E1DE292504D500CDAAFC /* Store.swift in Sources */,
+				7590E1E0292504FA00CDAAFC /* TokenLocalPersistence.swift in Sources */,
+				7590E1DF292504F500CDAAFC /* InvestmentsRedux.swift in Sources */,
+				7590E1E22925051D00CDAAFC /* NetworkErrors.swift in Sources */,
+				7590E1DD292502DB00CDAAFC /* LoginRedux.swift in Sources */,
+				7590E1E12925050900CDAAFC /* PortfoliosModel.swift in Sources */,
+				7590E1D72925026E00CDAAFC /* LoginRuducerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7590E1D92925026E00CDAAFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 750B325D2921BF0700BF74EF /* WarrenChallengeRedux */;
+			targetProxy = 7590E1D82925026E00CDAAFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		750B326B2921BF0A00BF74EF /* Debug */ = {
@@ -492,6 +580,45 @@
 			};
 			name = Release;
 		};
+		7590E1DA2925026E00CDAAFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Heitor.WarrenChallengeReduxUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WarrenChallengeRedux.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WarrenChallengeRedux";
+			};
+			name = Debug;
+		};
+		7590E1DB2925026E00CDAAFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Heitor.WarrenChallengeReduxUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WarrenChallengeRedux.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WarrenChallengeRedux";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -509,6 +636,15 @@
 			buildConfigurations = (
 				750B326E2921BF0A00BF74EF /* Debug */,
 				750B326F2921BF0A00BF74EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7590E1DC2925026E00CDAAFC /* Build configuration list for PBXNativeTarget "WarrenChallengeReduxUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7590E1DA2925026E00CDAAFC /* Debug */,
+				7590E1DB2925026E00CDAAFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

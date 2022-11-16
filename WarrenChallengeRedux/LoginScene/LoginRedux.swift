@@ -31,6 +31,10 @@ struct LoginState: ReduxState {
     
     var loginStateCase: LoginStateCases
     
+    init(loginStateCase: LoginStateCases) {
+        self.loginStateCase = loginStateCase
+    }
+    
     init() {
         if let _ = UserDefaultsHelper().fetchTokenFromMemory() {
             self.loginStateCase = .loggedIn
