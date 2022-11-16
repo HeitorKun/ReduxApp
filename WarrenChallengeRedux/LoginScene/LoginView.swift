@@ -66,7 +66,7 @@ struct LoginView: View {
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                 self.focusedField = .usernameField
                             }
                         }

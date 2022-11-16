@@ -20,13 +20,15 @@ func investmentsMiddleware() -> Middleware<AppState> {
                 let tokenGetter: FetchTokenFromMemory = UserDefaultsHelper()
                 
                 let result = await  portfolioWebService.fetchPortfolio(with: tokenGetter.fetchTokenFromMemory() ?? "" )
-                
-                switch result {
-                case .error(errorType: _):
-                    dispatch(InvestmentsFetchingFailed())
-                case .success(data: let portfolio):
-                    dispatch(InvestmentsFetchingSuccess(portfolio: portfolio))
+                DispatchQueue.main.async {
+                    switch result {
+                    case .error(errorType: _):
+                        dispatch(InvestmentsFetchingFailed())
+                    case .success(data: let portfolio):
+                        dispatch(InvestmentsFetchingSuccess(portfolio: portfolio))
+                    }
                 }
+                
             }
         default:
             break

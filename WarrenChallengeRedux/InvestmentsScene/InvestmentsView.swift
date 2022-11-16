@@ -8,8 +8,73 @@
 import SwiftUI
 
 struct InvestmentsView: View {
+    @State private var saldo: Int = 122222
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            ScrollView {
+                VStack {
+                    ZStack{
+                        ZStack{
+                            Image("planeAndBuildings")
+                                .renderingMode(.original)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(alignment: .top)
+                            Rectangle()
+                                .fill(.red.opacity(0.3))
+                                .blendMode(.multiply)
+                        }
+                        VStack{
+                            Spacer()
+                            HStack{
+                                Text("Próximo passo")
+                                    .foregroundColor(.white)
+                                    .font(.body)
+                                Spacer()
+                            }
+                            HStack{
+                                Text("Analise")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                    .bold()
+                                Spacer()
+                            }
+                            HStack{
+                                Text("Vocês está no caminho certo, continue investindo")
+                                    .foregroundColor(.white)
+                                    .font(.body)
+                                    .bold()
+                                Spacer()
+                            }
+                        }
+                        .padding()
+                        
+                    }
+                    VStack {
+                        VStack {
+                            Text("Seu saldo é de")
+                            
+                            Text("R$ \(saldo)")
+                                .font(.largeTitle)
+                        }
+                        .padding([.leading,.trailing], 10)
+                        .background(Color(.white))
+                        .cornerRadius(VisualConstants.cornerRadius)
+                        .shadow(radius: 0.3)
+                        
+                    }
+                    .padding()
+                    
+                }
+            }
+            .ignoresSafeArea()
+            
+            
+        }.background(.gray.opacity(0.05))
+        
+        
     }
 }
 

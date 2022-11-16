@@ -15,11 +15,13 @@ func loginMiddleware() -> Middleware<AppState> {
             Task {
                 let postLoginService: PostLoginProtocol = LoginWebservice()
                 let result = await  postLoginService.postLogin(email: action.email, password: action.password)
-                switch result {
-                case .error(errorType: _):
-                    dispatch(LoginFail())
-                case .success(tokens: let tokens):
-                    dispatch(LoginSuccess(token: tokens.accessToken))
+                DispatchQueue.main.async {
+                    switch result {
+                    case .error(errorType: _):
+                        dispatch(LoginFail())
+                    case .success(tokens: let tokens):
+                        dispatch(LoginSuccess(token: tokens.accessToken))
+                    }
                 }
             }
         default:

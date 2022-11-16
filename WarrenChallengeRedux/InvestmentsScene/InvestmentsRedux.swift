@@ -39,7 +39,7 @@ func PortfolioReducer(_ state: PortfolioState, _ action: Action) -> PortfolioSta
         
         case _ as InvestmentsFetchingFailed:
             state.portfolioStateCase = .fetchingFail
-        
+    
         case let action as InvestmentsFetchingSuccess:
             state.portfolioStateCase = .fetchSuccess(portfolio: action.portfolio)
         

@@ -8,6 +8,7 @@
 import Foundation
 
 struct VisualConstants {
+    
     static let cornerRadius: CGFloat = 8
     static let black: String = "blackWarren"
     static let red: String = "redWarren"
