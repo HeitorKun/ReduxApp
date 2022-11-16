@@ -13,7 +13,7 @@ func loginMiddleware() -> Middleware<AppState> {
         switch action {
         case let action as PostLogin:
             Task {
-                let postLoginService: PostLoginProtocol = LoginWebservice()
+                let postLoginService: PostLoginService = LoginWebservice()
                 let result = await  postLoginService.postLogin(email: action.email, password: action.password)
                 DispatchQueue.main.async {
                     switch result {

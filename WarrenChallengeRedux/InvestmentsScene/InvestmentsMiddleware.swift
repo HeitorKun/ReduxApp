@@ -16,7 +16,7 @@ func investmentsMiddleware() -> Middleware<AppState> {
             
             Task {
                 
-                let portfolioWebService: PortfolioFetcherWebService = PortfolioWebservice()
+                let portfolioWebService: PortfolioFetcherService = PortfolioWebservice()
                 let tokenGetter: FetchTokenFromMemory = UserDefaultsHelper()
                 
                 let result = await  portfolioWebService.fetchPortfolio(with: tokenGetter.fetchTokenFromMemory() ?? "" )

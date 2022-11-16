@@ -6,13 +6,13 @@
 
 import Foundation
 
-protocol PostLoginProtocol {
+protocol PostLoginService {
     
     func postLogin(email: String, password: String) async -> LoginAnswer
     
 }
 
-struct LoginWebservice: PostLoginProtocol {
+struct LoginWebservice: PostLoginService {
     
     func postLogin(email: String, password: String) async -> LoginAnswer {
         guard let url = URL(string: "https://enigmatic-bayou-48219.herokuapp.com/api/v2/account/login" ) else {

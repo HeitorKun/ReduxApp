@@ -67,6 +67,19 @@ struct InvestmentsView: View {
                     }
                     .padding()
                     
+                    Spacer()
+                    
+                    HStack {
+                        List {
+                            [1,2,3,4,5].forEach { _ in
+                                Text("sasasaas")
+                            }
+                        }
+                        
+                    }
+                    
+                    Spacer()
+                    
                 }
             }
             .ignoresSafeArea()

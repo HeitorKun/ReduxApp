@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct WarrenChallengeReduxApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear{
+                    
+                }
             
         }
     }

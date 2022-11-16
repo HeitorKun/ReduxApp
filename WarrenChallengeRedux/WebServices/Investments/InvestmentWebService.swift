@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol PortfolioFetcherWebService {
+protocol PortfolioFetcherService {
     
     func fetchPortfolio(with token: String) async -> PortfoliosFetchAnswer
     
 }
 
-struct PortfolioWebservice: PortfolioFetcherWebService {
+struct PortfolioWebservice: PortfolioFetcherService {
     
     func fetchPortfolio(with token: String) async -> PortfoliosFetchAnswer {
         guard let url = URL(string: "https://enigmatic-bayou-48219.herokuapp.com/api/v2/portfolios/mine" ) else {

@@ -25,6 +25,8 @@
 		7553FE52292440E300BC56D2 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FE51292440E300BC56D2 /* LoginModels.swift */; };
 		7553FE54292440FC00BC56D2 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FE53292440FC00BC56D2 /* NetworkErrors.swift */; };
 		7553FE582924422F00BC56D2 /* InvestmentWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553FE572924422F00BC56D2 /* InvestmentWebService.swift */; };
+		7590E1C42924B5E400CDAAFC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1C32924B5E400CDAAFC /* ImageLoader.swift */; };
+		7590E1C62924B62700CDAAFC /* ImageDataFetcherWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590E1C52924B62700CDAAFC /* ImageDataFetcherWebService.swift */; };
 		75FDC09829245C7B0020F865 /* PortfoliosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09729245C7B0020F865 /* PortfoliosModel.swift */; };
 		75FDC09A29248EDC0020F865 /* InvestmentsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09929248EDC0020F865 /* InvestmentsMiddleware.swift */; };
 		75FDC09C29248F090020F865 /* InvestmentsRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FDC09B29248F090020F865 /* InvestmentsRedux.swift */; };
@@ -51,6 +53,8 @@
 		7553FE51292440E300BC56D2 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		7553FE53292440FC00BC56D2 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		7553FE572924422F00BC56D2 /* InvestmentWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentWebService.swift; sourceTree = "<group>"; };
+		7590E1C32924B5E400CDAAFC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		7590E1C52924B62700CDAAFC /* ImageDataFetcherWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataFetcherWebService.swift; sourceTree = "<group>"; };
 		75FDC09729245C7B0020F865 /* PortfoliosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfoliosModel.swift; sourceTree = "<group>"; };
 		75FDC09929248EDC0020F865 /* InvestmentsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsMiddleware.swift; sourceTree = "<group>"; };
 		75FDC09B29248F090020F865 /* InvestmentsRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsRedux.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		750B32822922BEAF00BF74EF /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
+				7590E1C72924B63500CDAAFC /* Images */,
 				7553FE56292441FD00BC56D2 /* Investments */,
 				7553FE55292441E200BC56D2 /* Login */,
 				7553FE53292440FC00BC56D2 /* NetworkErrors.swift */,
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				750B32892922CD6A00BF74EF /* TokenLocalPersistence.swift */,
+				7590E1C32924B5E400CDAAFC /* ImageLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				75FDC09729245C7B0020F865 /* PortfoliosModel.swift */,
 			);
 			path = Investments;
+			sourceTree = "<group>";
+		};
+		7590E1C72924B63500CDAAFC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7590E1C52924B62700CDAAFC /* ImageDataFetcherWebService.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +278,10 @@
 			files = (
 				75FDC09829245C7B0020F865 /* PortfoliosModel.swift in Sources */,
 				750B32842922BED400BF74EF /* LoginWebService.swift in Sources */,
+				7590E1C42924B5E400CDAAFC /* ImageLoader.swift in Sources */,
 				7553FE582924422F00BC56D2 /* InvestmentWebService.swift in Sources */,
 				750B32782922A67300BF74EF /* WideButtonStyle.swift in Sources */,
+				7590E1C62924B62700CDAAFC /* ImageDataFetcherWebService.swift in Sources */,
 				75FDC09C29248F090020F865 /* InvestmentsRedux.swift in Sources */,
 				750B32712921CF1900BF74EF /* LoginView.swift in Sources */,
 				750B32872922BF5500BF74EF /* LoginMiddleware.swift in Sources */,
