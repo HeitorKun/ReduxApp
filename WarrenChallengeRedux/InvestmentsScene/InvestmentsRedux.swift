@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum PortfolioStateCases {
-    case haventTriedToFetch
-    case fetchingPortfolio
-    case fetchingFail
-    case fetchSuccess( portfolio: PortfoliosModel)
-}
-
 struct FetchInvestments: Action {
     
 }
@@ -28,7 +21,7 @@ struct InvestmentsFetchingSuccess: Action {
 
 struct PortfolioState: ReduxState {
     
-    var portfolioStateCase: PortfolioStateCases = .haventTriedToFetch
+    var portfolio: PortfoliosModel = .init(portfolios: [])
     
 }
 
@@ -36,15 +29,14 @@ func PortfolioReducer(_ state: PortfolioState, _ action: Action) -> PortfolioSta
     var state = state
     
     switch action {
+    case _ as InvestmentsFetchingFailed:
+        state.portfolio = .init(portfolios: [])
         
-        case _ as InvestmentsFetchingFailed:
-            state.portfolioStateCase = .fetchingFail
-    
-        case let action as InvestmentsFetchingSuccess:
-            state.portfolioStateCase = .fetchSuccess(portfolio: action.portfolio)
+    case let action as InvestmentsFetchingSuccess:
+        state.portfolio = action.portfolio
         
-        default:
-            break
+    default:
+        break
     }
     
     return state

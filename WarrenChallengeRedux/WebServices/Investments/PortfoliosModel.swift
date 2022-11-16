@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum PortfoliosFetchAnswer {
     case error(errorType: NetworkError)
     case success(data: PortfoliosModel)
@@ -17,13 +16,21 @@ struct PortfoliosModel: Decodable {
     var portfolios: [InvestmentModel]
 }
 
-struct InvestmentModel: Decodable {
+struct InvestmentModel: Decodable, Hashable {
+    
     var _id: String
     var name: String
     var background: BackgroundImagesURLsModel
     var totalBalance: Double
     var goalAmount: Int?
     var goalDate: String
+    
+    static func == (lhs: InvestmentModel, rhs: InvestmentModel) -> Bool {
+        return lhs._id == rhs._id
+    }
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(_id)
+    }
 }
 
 struct BackgroundImagesURLsModel: Decodable {

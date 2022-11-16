@@ -14,6 +14,7 @@ struct ContentView: View {
         HStack{
             if loggedIn {
                 InvestmentsView()
+                    .environmentObject(store)
             }
             else {
                 LandingView()

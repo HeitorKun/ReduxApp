@@ -42,13 +42,7 @@ class ImageFetcherWebService: ImageDataFetcherService {
                 })
                 .store(in: &self.cancellables)
             
-            
-            
         }
-        
-        
-        
-        
     }
     
     

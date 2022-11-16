@@ -17,6 +17,7 @@ struct AppState: ReduxState {
 // todos os sub estados aqui
     var loginState: LoginState = LoginState()
     var portfolioState: PortfolioState = PortfolioState()
+        
 }
 
 protocol Action { }

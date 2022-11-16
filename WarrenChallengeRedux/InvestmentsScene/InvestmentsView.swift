@@ -8,9 +8,37 @@
 import SwiftUI
 
 struct InvestmentsView: View {
-    @State private var saldo: Int = 122222
+    
+    enum InvestmentsViewStates {
+        case placeHolder
+        case fetchingInvestments
+        case investmentsAvailable
+    }
+    
+    @EnvironmentObject var store: Store<AppState>
+    
+    struct Props {
+        let investments: [InvestmentModel]
+        let viewState: InvestmentsViewStates
+        let saldo: Int
+    }
+    
+    private func map(state: PortfolioState) -> Props {
+        var soma: Double = 0.0
+        
+        for investimento in state.portfolio.portfolios {
+            soma += investimento.totalBalance
+        }
+        return  Props(investments: state.portfolio.portfolios,
+                      viewState: state.portfolio.portfolios.count > 0 ? .investmentsAvailable : .placeHolder,
+                      saldo: Int(soma)
+        )
+        
+    }
     
     var body: some View {
+        
+        let props = map(state: store.state.portfolioState)
         
         VStack {
             ScrollView {
@@ -23,7 +51,7 @@ struct InvestmentsView: View {
                                 .scaledToFill()
                                 .frame(alignment: .top)
                             Rectangle()
-                                .fill(.red.opacity(0.3))
+                                .fill(.red.opacity(0.2))
                                 .blendMode(.multiply)
                         }
                         VStack{
@@ -52,11 +80,13 @@ struct InvestmentsView: View {
                         .padding()
                         
                     }
+                    
                     VStack {
+                        
                         VStack {
                             Text("Seu saldo é de")
                             
-                            Text("R$ \(saldo)")
+                            Text("R$ \(props.saldo)")
                                 .font(.largeTitle)
                         }
                         .padding([.leading,.trailing], 10)
@@ -67,27 +97,42 @@ struct InvestmentsView: View {
                     }
                     .padding()
                     
+                    
+                    
                     Spacer()
                     
-                    HStack {
-                        List {
-                            [1,2,3,4,5].forEach { _ in
-                                Text("sasasaas")
-                            }
-                        }
+                    if props.viewState == .placeHolder {
                         
+                        Text("Invista para ter acesso a uma gama de produtos incrível!")
+                            .font(.title2)
+                            .padding([.leading,.trailing], 20)
+                            .background(Color(.white))
+                            .cornerRadius(VisualConstants.cornerRadius)
+                            .shadow(radius: 0.1)
+                            .padding()
                     }
-                    
-                    Spacer()
-                    
+                    else if props.viewState == .investmentsAvailable {
+                        HStack {
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                HStack {
+                                    ForEach(props.investments, id: \.self) { investment in
+                                        InvestmentView(investment: investment)
+                                            .padding()
+                                    }
+                                }
+                                
+                            })
+                        }
+                    }
                 }
             }
             .ignoresSafeArea()
             
-            
-        }.background(.gray.opacity(0.05))
-        
-        
+        }
+        .background(.gray.opacity(0.05))
+        .onAppear {
+            store.dispatch(action: FetchInvestments())
+        }
     }
 }
 

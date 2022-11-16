@@ -7,13 +7,7 @@
 import Combine
 import Foundation
 
-protocol ImageLoaderAbstraction: ObservableObject {
-    var imageData: Data { get  }
-    func fetch(urlString:String)
-
-}
-
-class ImageLoader: ImageLoaderAbstraction {
+class WebImageLoader: ObservableObject {
     @Published var imageData: Data = Data()
     
     private var dataService: ImageDataFetcherService
@@ -30,7 +24,6 @@ class ImageLoader: ImageLoaderAbstraction {
             
         } receiveValue: { [weak self] data in
             self?.imageData = data
-            print("working")
         }.store(in: &subscriptions)
     }
     
