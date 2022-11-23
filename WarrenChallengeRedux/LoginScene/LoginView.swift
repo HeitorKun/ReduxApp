@@ -177,9 +177,7 @@ struct LoginView: View {
             self.isAlertPresented = store.state.loginState.loginStateCase == .loginFail
         }
         
-        
     }
-    
 }
 
 struct LoginView_Previews: PreviewProvider {
